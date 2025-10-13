@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
@@ -50,9 +51,9 @@ export default function Home() {
 
         {/* Sell on JENGA Button */}
         <div className="ml-6">
-          <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium">
+          <Link href="/sell" className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 font-medium inline-block">
             Sell on JENGA
-          </button>
+          </Link>
         </div>
 
         {/* Search Bar */}
@@ -82,18 +83,23 @@ export default function Home() {
             🌓
           </button>
           
-          <button className={`flex items-center gap-1 hover:text-red-600 ${isDark ? 'text-gray-300' : 'text-black'}`}>
+          {/* Likes Button */}
+          <Link href="/likes" className={`flex items-center gap-1 hover:text-red-600 ${isDark ? 'text-gray-300' : 'text-black'}`}>
             <span className="text-xl">♥</span>
             <span className="text-sm">Likes</span>
-          </button>
-          <button className={`flex items-center gap-1 hover:text-green-600 ${isDark ? 'text-gray-300' : 'text-black'}`}>
+          </Link>
+
+          {/* Cart Button */}
+          <Link href="/cart" className={`flex items-center gap-1 hover:text-green-600 ${isDark ? 'text-gray-300' : 'text-black'}`}>
             <span className="text-xl">🛒</span>
             <span className="text-sm">Cart</span>
-          </button>
-          <button className={`flex items-center gap-1 hover:text-blue-600 ${isDark ? 'text-gray-300' : 'text-black'}`}>
+          </Link>
+
+          {/* Account Button */}
+          <Link href="/account" className={`flex items-center gap-1 hover:text-blue-600 ${isDark ? 'text-gray-300' : 'text-black'}`}>
             <span className="text-xl">👤</span>
             <span className="text-sm">Account</span>
-          </button>
+          </Link>
         </div>
       </header>
 
@@ -109,25 +115,28 @@ export default function Home() {
           <div className={`w-8 h-8 rounded-bl-full ${isDark ? 'bg-black/80' : 'bg-white/80'}`}></div>
         </div>
 
-        {/* Category Text Links */}
-        <span className={`font-medium cursor-pointer hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+        {/* Category Text Links - ALL WORKING LINKS */}
+        <Link href="/hardware" className={`font-medium hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
           Hardware
-        </span>
-        <span className={`font-medium cursor-pointer hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+        </Link>
+        <Link href="/electricals" className={`font-medium hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
           Electricals
-        </span>
-        <span className={`font-medium cursor-pointer hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+        </Link>
+        <Link href="/plumbing" className={`font-medium hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
           Plumbing
-        </span>
-        <span className={`font-medium cursor-pointer hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+        </Link>
+        <Link href="/car-parts" className={`font-medium hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+          Car Parts
+        </Link>
+        <Link href="/tools" className={`font-medium hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
           Tools
-        </span>
-        <span className={`font-medium cursor-pointer hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+        </Link>
+        <Link href="/building-materials" className={`font-medium hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
           Building Materials
-        </span>
-        <span className={`font-medium cursor-pointer hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+        </Link>
+        <Link href="/safety-gear" className={`font-medium hover:underline ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
           Safety Gear
-        </span>
+        </Link>
       </div>
     </div>
   );
